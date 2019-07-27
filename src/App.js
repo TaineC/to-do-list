@@ -1,26 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+// import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class shoppinglist extends Component {
+
+  constructor(props){
+    super(props);
+    this.items = [
+      {
+        id: 1,
+        text: 'milk'
+      },
+      {
+        id: 2,
+        text: 'bread'
+      },
+      {
+        id: 3,
+        text: 'eggs'
+      },
+      {
+        id: 4,
+        text: 'flour'
+      }
+    ];
+  }
+
+  render(){
+    return(
+        <div className="wrap">
+          <h1>Shopping List</h1> 
+          <ul className="list-group">
+            {
+              this.items.map(function(item){
+                return(
+                  <li className="list-group-item" key={item.id}>
+                    <div className="item">
+                      {item.text}
+                    </div>
+                    <i className="far fa-times-circle note-remove"></i>
+                  </li>
+                );
+              })
+            }
+          </ul>
+          <div className="new-item">
+            <button type="submit" className="add-item">Add Item</button>
+          </div>
+        </div>
+    );
+  }
+    
 }
 
-export default App;
+export default shoppinglist;
