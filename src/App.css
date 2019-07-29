@@ -44,19 +44,30 @@ i:hover{
 }
 
 .new-item{
-  align-items: center;
-  width: 60%;
-  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-item{
+  flex: 1 0 60%;
+  height: 2.5em;
+  outline: none;
+  padding: 0 0.5em;
+  /* border-radius: 0.5em 0 0 0.5em; */
 }
 
 .add-item{
-  padding: 0.5em;
+  height: 2.5em;
   text-align: center;
-  width: 100%;
-  margin: 1em auto;
+  flex: 0 0 25%;
+  margin: auto;
   background-color: lightseagreen;
   color: white;
   font-weight: bold;
+  display: block;
+}
+
+.add-item:focus{
   outline: none;
 }
 

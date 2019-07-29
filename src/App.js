@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import logo from './logo.svg';
 import './App.css';
 
 class shoppinglist extends Component {
@@ -30,6 +29,8 @@ class shoppinglist extends Component {
     ];
   }
 
+
+
   render(){
     return(
         <div className="wrap container">
@@ -47,10 +48,15 @@ class shoppinglist extends Component {
                 );
               })
             }
+
+            <li className="new-item list-group-item">
+              <input type="text" className="input-item" id="list-input" placeholder="new item..."/>
+              <button type="submit" className="add-item">Add Item</button>
+            </li>
+
           </ul>
-          <div className="new-item">
-            <button type="submit" className="add-item" onClick={() => alert('I want to create a new list item but i dont know how. YET!!!!!!')}>Add Item</button>
-          </div>
+          
+          
         </div>
     );
   }
